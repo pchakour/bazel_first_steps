@@ -1,0 +1,27 @@
+{
+  "root": true,
+  "extends": [
+    "@elastic/eslint-config-kibana",
+    "plugin:@elastic/eui/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "license-header"
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "ignorePatterns": ["HAWK_LICENSE.js"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js"],
+      "rules": {
+        "no-undef": "off",
+        "no-nested-ternary": "off",
+      }
+    }
+  ]
+}

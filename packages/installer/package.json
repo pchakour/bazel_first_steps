@@ -1,0 +1,20 @@
+{
+  "name": "installer",
+  "version": "4.0.1",
+  "type": "module",
+  "description": "Hawk installer",
+  "author": "Hawk Team",
+  "main": "build/main.desktop.js",
+  "devDependencies": {
+  },
+  "scripts": {
+    "artifacts:symlink": "node scripts/artifacts_symlink.js",
+    "build:cli": "yarn artifacts:symlink && webpack --config cli/webpack.config.js",
+    "build:desktop": "yarn artifacts:symlink && webpack --config desktop/webpack.config.js --config desktop/app/webpack.config.js",
+    "package:cli": "pkg build/main.cli.js -c config/node-pkg.json",
+    "package:desktop": "electron-builder build --config config/electron-builder.json",
+    "distribute": "node scripts/distribute.js",
+    "start:cli": "node ./build/main.cli.js",
+    "start:desktop": "electron ./build/main.desktop.js"
+  }
+}

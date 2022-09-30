@@ -1,0 +1,13 @@
+{
+  "name": "hawk_installer_cli",
+  "description": "Hawk Installer CLI",
+  "bin": "../../bazel-out/k8-fastbuild/bin/packages/installer/src/cli/index.js",
+  "pkg": {
+    "assets": [
+    ],
+    "targets": [
+      "node14-linux-x64"
+    ],
+    "outputPath": "build"
+  }
+}

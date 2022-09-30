@@ -1,0 +1,26 @@
+{
+  "name": "core",
+  "version": "4.0.1",
+  "private": true,
+  "description": "Core functions for Hawk standalone tools",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "dependencies": {
+    "find-process": "^1.4.7",
+    "fs-extra": "^10.1.0",
+    "lodash": "^4.17.21",
+    "node-port-check": "^2.0.1",
+    "node-tar.gz": "^1.0.0",
+    "tail": "^2.2.4",
+    "tar.gz2": "^1.0.0",
+    "winston": "^3.8.1"
+  },
+  "devDependencies": {
+    "@bazel/bazel": "^2.1.0",
+    "@bazel/typescript": "^5.6.0",
+    "typescript": "^4.8.4"
+  },
+  "scripts": {
+    "tsc": "tsc"
+  }
+}

@@ -1,0 +1,42 @@
+load("@npm//@bazel/typescript:index.bzl", "ts_config", "ts_project")
+load("@npm//@bazel/rollup:index.bzl", "rollup_bundle")
+load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
+
+ts_config(
+    name = "tsconfig",
+    src = "tsconfig.json",
+    deps = [
+        "//:tsconfig.json",
+    ],
+)
+
+NPM_ROLLUP_DEPS = []
+NPM_TS_DEPS = NPM_ROLLUP_DEPS + []
+
+
+ts_project(
+  name = "transpile",
+  srcs = glob(["src/**/*.ts"]) + ["//:config.json"],
+  resolve_json_module = True,
+  tsconfig = ":tsconfig",
+  out_dir = 'transpiled',
+  deps = NPM_TS_DEPS + ["//packages/core"],
+)
+
+
+rollup_bundle(
+  name = "bundle",
+  deps = NPM_ROLLUP_DEPS + [
+    ":transpile",
+    "@npm//@rollup/plugin-commonjs",
+    "@npm//@rollup/plugin-node-resolve",
+    "@npm//@rollup/plugin-json"
+  ],
+  entry_point = "transpiled/src/cli/index.ts",
+  config_file = "rollup.config.js",
+)
+
+nodejs_binary(
+  name = "bin",
+  entry_point = ":bundle",
+)

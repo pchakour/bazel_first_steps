@@ -1,0 +1,47 @@
+{
+  "name": "root",
+  "version": "4.0.1",
+  "description": "Hawk tools for standalone",
+  "type": "module",
+  "devDependencies": {
+    "@bazel/bazel": "^2.1.0",
+    "@bazel/rollup": "^5.6.0",
+    "@bazel/typescript": "^5.6.0",
+    "@elastic/eslint-config-kibana": "^0.15.0",
+    "@elastic/eslint-plugin-eui": "^0.0.2",
+    "@elastic/eui": "^68.0.0",
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "@types/commander": "^2.12.2",
+    "@types/node": "^18.7.23",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.38.1",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-import-resolver-typescript": "^3.5.1",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-license-header": "^0.6.0",
+    "eslint-plugin-mocha": "^10.1.0",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-prefer-object-spread": "^1.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.31.8",
+    "rollup": "^2.79.1",
+    "typescript": "*"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "start": "node scripts/start.js",
+    "package": "node scripts/package.js"
+  },
+  "dependencies": {
+    "commander": "^9.4.1",
+    "enquirer": "^2.3.6",
+    "find-process": "^1.4.7",
+    "listr2": "^5.0.5",
+    "node-port-check": "^2.0.1",
+    "uid": "^2.0.0"
+  }
+}
